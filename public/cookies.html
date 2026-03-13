@@ -9,6 +9,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aquiunlugar.com/cookies.html">
   <meta property="og:site_name" content="Aquí un lugar">
+  <meta name="description" content="Política de cookies de Aquí un lugar. Información sobre las cookies que utilizamos y cómo gestionarlas.">
+  <meta property="og:description" content="Política de cookies de Aquí un lugar, espacio creativo en Lloret de Mar.">
+  <meta property="og:image" content="https://aquiunlugar.com/images/hero-optimized.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +22,30 @@
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-  <header class="legal-header">
+  <header class="scrolled">
     <nav class="container">
       <a href="/" class="nav-logo">Aquí un lugar</a>
+      <ul class="nav-links">
+        <li><a href="/#talleres">Talleres</a></li>
+        <li><a href="/#experiencias">Experiencias</a></li>
+        <li><a href="/#tienda">Tienda</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-label="Menú de navegación">
+    <button class="mobile-nav-close" aria-label="Cerrar menú">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/#talleres">Talleres</a>
+    <a href="/#experiencias">Experiencias</a>
+    <a href="/#tienda">Tienda</a>
+    <a href="/#contacto">Contacto</a>
+  </div>
 
   <main id="main-content" class="legal-content section-padding">
     <div class="container">
@@ -44,7 +66,6 @@
       <p>Este sitio web puede utilizar los siguientes servicios de terceros que establecen sus propias cookies:</p>
       <ul>
         <li><strong>Google Maps:</strong> utilizamos Google Maps para mostrar nuestra ubicación. Google puede establecer cookies para el funcionamiento del mapa. Puedes consultar la política de privacidad de Google en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
-        <li><strong>Google Analytics:</strong> utilizamos Google Analytics 4 para analizar el uso del sitio web de forma agregada. Google puede establecer cookies como <code>_ga</code> y <code>_ga_*</code> con una duración de hasta 2 años. Solo se activan si aceptas las cookies. Puedes consultar la política de privacidad de Google en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
       </ul>
 
       <h2>¿Cómo gestionar las cookies?</h2>
@@ -72,6 +93,7 @@
     </div>
   </footer>
 
+  <script src="js/main.min.js" defer></script>
   <script src="js/cookies.min.js" defer></script>
 </body>
 </html>

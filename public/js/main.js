@@ -170,8 +170,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- #15 Back to top button ---
   const backToTop = document.querySelector('.back-to-top');
   if (backToTop) {
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 2);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 2);
+          ticking = false;
+        });
+        ticking = true;
+      }
     }, { passive: true });
 
     backToTop.addEventListener('click', () => {

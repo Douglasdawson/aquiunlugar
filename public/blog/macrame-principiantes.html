@@ -26,6 +26,7 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.json">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,15 +64,60 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://aquiunlugar.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://aquiunlugar.com/blog.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Macramé para principiantes",
+        "item": "https://aquiunlugar.com/blog/macrame-principiantes.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-  <header class="legal-header">
+  <header class="scrolled">
     <nav class="container">
       <a href="/" class="nav-logo">Aquí un lugar</a>
+      <ul class="nav-links">
+        <li><a href="/#talleres">Talleres</a></li>
+        <li><a href="/#experiencias">Experiencias</a></li>
+        <li><a href="/#tienda">Tienda</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-label="Menú de navegación">
+    <button class="mobile-nav-close" aria-label="Cerrar menú">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/#talleres">Talleres</a>
+    <a href="/#experiencias">Experiencias</a>
+    <a href="/#tienda">Tienda</a>
+    <a href="/#contacto">Contacto</a>
+  </div>
 
   <main id="main-content" class="blog-article section-padding">
     <div class="container">
@@ -109,6 +155,20 @@
           <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20reservar%20un%20taller%20de%20macramé%20en%20Aquí%20un%20lugar" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">Reservar taller de macramé</a>
         </div>
 
+        <section class="related-articles">
+          <h2>Artículos que también te pueden interesar</h2>
+          <div class="related-grid">
+            <a href="primer-taller-creativo.html" class="related-card">
+              <img src="../images/galeria-1.webp" alt="Qué esperar de tu primer taller creativo" width="300" height="200" loading="lazy">
+              <h3>Qué esperar de tu primer taller creativo</h3>
+            </a>
+            <a href="beneficios-crear-manos.html" class="related-card">
+              <img src="../images/galeria-2.webp" alt="5 beneficios de crear con las manos" width="300" height="200" loading="lazy">
+              <h3>5 beneficios de crear con las manos</h3>
+            </a>
+          </div>
+        </section>
+
       </article>
     </div>
   </main>
@@ -121,6 +181,7 @@
     </div>
   </footer>
 
+  <script src="../js/main.min.js" defer></script>
   <script src="../js/cookies.min.js" defer></script>
 </body>
 </html>

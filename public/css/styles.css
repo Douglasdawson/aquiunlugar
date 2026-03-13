@@ -139,7 +139,7 @@ p {
   font-weight: 400;
   letter-spacing: 0.5px;
   text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
   border: none;
 }
@@ -188,7 +188,7 @@ header {
   max-width: 1100px;
   z-index: 1000;
   border-radius: 50px;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), padding 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 header.scrolled {
@@ -468,7 +468,7 @@ header.scrolled .hamburger span {
   background: var(--white-off);
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .taller-card:hover {
@@ -639,7 +639,7 @@ header.scrolled .hamburger span {
   padding: 2.5rem 2rem;
   border: 1px solid rgba(139, 158, 139, 0.3);
   border-radius: 16px;
-  transition: all 0.4s ease;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
   text-align: center;
   background: var(--white-off);
 }
@@ -692,7 +692,7 @@ header.scrolled .hamburger span {
   background: var(--white-off);
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .producto-card:hover {
@@ -841,7 +841,7 @@ header.scrolled .hamburger span {
 
 footer {
   background: var(--brown-dark);
-  color: rgba(250, 248, 245, 0.6);
+  color: rgba(250, 248, 245, 0.75);
   padding: 3rem 0 2rem;
 }
 
@@ -861,7 +861,7 @@ footer {
 .footer-brand .footer-tagline {
   font-style: italic;
   font-size: 0.85rem;
-  color: rgba(250, 248, 245, 0.55);
+  color: rgba(250, 248, 245, 0.75);
   display: block;
   margin-bottom: var(--space-sm);
 }
@@ -872,7 +872,7 @@ footer {
 
 .footer-address p {
   font-size: 0.85rem;
-  color: rgba(250, 248, 245, 0.6);
+  color: rgba(250, 248, 245, 0.75);
   margin-bottom: 0.2rem;
 }
 
@@ -910,7 +910,7 @@ footer h4 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(250, 248, 245, 0.6);
+  color: rgba(250, 248, 245, 0.75);
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.3s ease;
@@ -926,15 +926,21 @@ footer h4 {
   flex-shrink: 0;
 }
 
+.social-link:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .footer-horario {
   font-size: 0.8rem;
-  color: rgba(250, 248, 245, 0.45);
+  color: rgba(250, 248, 245, 0.65);
   margin-top: var(--space-sm);
 }
 
 footer p {
   font-size: 0.8rem;
-  color: rgba(250, 248, 245, 0.55);
+  color: rgba(250, 248, 245, 0.75);
 }
 
 .footer-links {
@@ -944,7 +950,7 @@ footer p {
 }
 
 .footer-links a {
-  color: rgba(250, 248, 245, 0.6);
+  color: rgba(250, 248, 245, 0.75);
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.3s ease;
@@ -969,7 +975,7 @@ footer p {
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   z-index: 1050;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   font-size: 1.8rem;
 }
@@ -1406,7 +1412,7 @@ footer p {
 }
 
 .footer-legal a {
-  color: rgba(250, 248, 245, 0.5);
+  color: rgba(250, 248, 245, 0.65);
   text-decoration: none;
   font-size: 0.75rem;
   letter-spacing: 0.5px;
@@ -1695,6 +1701,58 @@ footer p {
   font-size: 1.5rem;
   color: var(--brown-dark);
   margin-bottom: 1.5rem;
+}
+
+/* ---------- RELATED ARTICLES ---------- */
+
+.related-articles {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--sand);
+}
+
+.related-articles h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.related-card {
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--cream);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(61, 43, 31, 0.1);
+}
+
+.related-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.related-card h3 {
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--brown-dark);
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- SKIP LINK ---------- */

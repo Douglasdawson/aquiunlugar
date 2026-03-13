@@ -9,6 +9,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aquiunlugar.com/aviso-legal.html">
   <meta property="og:site_name" content="Aquí un lugar">
+  <meta name="description" content="Aviso legal de Aquí un lugar, espacio creativo en Lloret de Mar. Datos identificativos, propiedad intelectual y legislación aplicable.">
+  <meta property="og:description" content="Aviso legal de Aquí un lugar, espacio creativo en Lloret de Mar.">
+  <meta property="og:image" content="https://aquiunlugar.com/images/hero-optimized.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +22,30 @@
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-  <header class="legal-header">
+  <header class="scrolled">
     <nav class="container">
       <a href="/" class="nav-logo">Aquí un lugar</a>
+      <ul class="nav-links">
+        <li><a href="/#talleres">Talleres</a></li>
+        <li><a href="/#experiencias">Experiencias</a></li>
+        <li><a href="/#tienda">Tienda</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-label="Menú de navegación">
+    <button class="mobile-nav-close" aria-label="Cerrar menú">✕</button>
+    <a href="/">Inicio</a>
+    <a href="/#talleres">Talleres</a>
+    <a href="/#experiencias">Experiencias</a>
+    <a href="/#tienda">Tienda</a>
+    <a href="/#contacto">Contacto</a>
+  </div>
 
   <main id="main-content" class="legal-content section-padding">
     <div class="container">
@@ -34,7 +56,7 @@
       <ul>
         <li><strong>Titular:</strong> [Nombre o razón social — pendiente de revisión]</li>
         <li><strong>NIF/CIF:</strong> [Pendiente de revisión]</li>
-        <li><strong>Domicilio:</strong> Rambla Romà Barnes, Premià de Mar, Barcelona</li>
+        <li><strong>Domicilio:</strong> Rambla Romà Barnes, 17310 Lloret de Mar, Girona</li>
         <li><strong>Correo electrónico:</strong> [Pendiente de revisión]</li>
         <li><strong>Teléfono:</strong> +34 676 807 577</li>
       </ul>
@@ -53,7 +75,7 @@
       <p>Este sitio web puede contener enlaces a páginas de terceros. Aquí un lugar no asume ninguna responsabilidad por el contenido, informaciones o servicios que pudieran aparecer en dichos sitios, que tienen carácter meramente informativo.</p>
 
       <h2>Legislación aplicable y jurisdicción</h2>
-      <p>La relación entre el usuario y Aquí un lugar se rige por la legislación española. Para cualquier controversia que pudiera surgir, las partes se someterán a los Juzgados y Tribunales de Barcelona.</p>
+      <p>La relación entre el usuario y Aquí un lugar se rige por la legislación española. Para cualquier controversia que pudiera surgir, las partes se someterán a los Juzgados y Tribunales de Girona.</p>
 
       <p class="legal-update">Última actualización: marzo 2026</p>
     </div>
@@ -67,6 +89,7 @@
     </div>
   </footer>
 
+  <script src="js/main.min.js" defer></script>
   <script src="js/cookies.min.js" defer></script>
 </body>
 </html>
