@@ -40,27 +40,36 @@ async function run() {
     console.warn('⚠ hero-local.jpg not found, skipping hero optimization');
   }
 
-  // Optimize gallery images
+  // Optimize gallery images (overwrite originals + generate WebP)
   for (let i = 1; i <= 6; i++) {
     const src = path.join(IMAGES, `galeria-${i}.jpg`);
     if (fs.existsSync(src)) {
-      await sharp(src)
+      // Read into buffer first so we can overwrite the original
+      const buffer = await sharp(src)
         .resize(800, 800, { fit: 'cover' })
         .jpeg({ quality: 80 })
-        .toFile(path.join(IMAGES, `galeria-${i}-opt.jpg`));
-      console.log(`✓ galeria-${i}-opt.jpg`);
+        .toBuffer();
+      fs.writeFileSync(src, buffer);
+      console.log(`✓ galeria-${i}.jpg (optimized in-place)`);
+
+      // Generate WebP
+      await sharp(buffer)
+        .webp({ quality: 80 })
+        .toFile(path.join(IMAGES, `galeria-${i}.webp`));
+      console.log(`✓ galeria-${i}.webp`);
     }
   }
 
-  // Optimize Instagram images
+  // Optimize Instagram images (overwrite originals)
   for (let i = 1; i <= 6; i++) {
     const src = path.join(IMAGES, `insta-${i}.jpg`);
     if (fs.existsSync(src)) {
-      await sharp(src)
+      const buffer = await sharp(src)
         .resize(400, 400, { fit: 'cover' })
         .jpeg({ quality: 80 })
-        .toFile(path.join(IMAGES, `insta-${i}-opt.jpg`));
-      console.log(`✓ insta-${i}-opt.jpg`);
+        .toBuffer();
+      fs.writeFileSync(src, buffer);
+      console.log(`✓ insta-${i}.jpg (optimized in-place)`);
     }
   }
 }

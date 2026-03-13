@@ -22,7 +22,12 @@ function loadGA4() {
 }
 
 (function () {
-  var consent = localStorage.getItem('cookie-consent');
+  var consent;
+  try {
+    consent = localStorage.getItem('cookie-consent');
+  } catch (e) {
+    consent = null;
+  }
 
   if (consent === 'accepted') {
     loadGA4();
@@ -47,13 +52,13 @@ function loadGA4() {
   document.body.appendChild(banner);
 
   banner.querySelector('.cookie-accept').addEventListener('click', function () {
-    localStorage.setItem('cookie-consent', 'accepted');
+    try { localStorage.setItem('cookie-consent', 'accepted'); } catch (e) { /* noop */ }
     banner.remove();
     loadGA4();
   });
 
   banner.querySelector('.cookie-reject').addEventListener('click', function () {
-    localStorage.setItem('cookie-consent', 'rejected');
+    try { localStorage.setItem('cookie-consent', 'rejected'); } catch (e) { /* noop */ }
     banner.remove();
   });
 })();
