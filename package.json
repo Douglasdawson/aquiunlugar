@@ -8,8 +8,9 @@
     "build:css": "cleancss -o public/css/styles.min.css public/css/styles.css",
     "build:js": "terser public/js/main.js -o public/js/main.min.js -c -m",
     "build:cookies": "terser public/js/cookies.js -o public/js/cookies.min.js -c -m",
+    "build:wizard": "terser public/js/wizard.js -o public/js/wizard.min.js -c -m",
     "build:images": "node scripts/optimize-images.js",
-    "build": "echo \"Static site ready — no build step needed\""
+    "build": "npm run build:css && npm run build:js && npm run build:wizard && npm run build:cookies"
   },
   "dependencies": {
     "serve": "^14.2.0"
