@@ -1,48 +1,8 @@
 run = "npx serve public -l 3000"
 entrypoint = "public/index.html"
-modules = ["python-3.11", "nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-deploymentTarget = "static"
-publicDir = "public"
-build = ["sh", "-c", "npm run build"]
-<<<<<<< HEAD
 run = ["npx", "serve", "public", "-l", "3000"]
-deploymentTarget = "static"
-publicDir = "public"
-=======
->>>>>>> a0a621db19435e22f2b208f4167797f18cad7eaf
-
-[agent]
-expertMode = true
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python3 -m http.server 5000 --directory public"
-waitForPort = 5000
-
-[workflows.workflow.metadata]
-outputType = "webview"
-
-[[ports]]
-localPort = 5000
-externalPort = 80
