@@ -14,27 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
-  // --- Mobile bottom nav: hide on scroll down, show on scroll up ---
-  const bottomNav = document.querySelector('.mobile-bottom-nav');
-  if (bottomNav) {
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-    const onBottomNavScroll = () => {
-      const currentY = window.scrollY;
-      if (currentY > lastScrollY && currentY > 300) {
-        bottomNav.classList.add('hidden');
-      } else {
-        bottomNav.classList.remove('hidden');
-      }
-      lastScrollY = currentY;
-      ticking = false;
+  // --- Mobile nav ---
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav-overlay');
+  const mobileClose = document.querySelector('.mobile-nav-close');
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+
+    const closeMobile = () => {
+      mobileNav.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     };
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(onBottomNavScroll);
-        ticking = true;
-      }
-    }, { passive: true });
+
+    mobileClose?.addEventListener('click', closeMobile);
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobile);
+    });
   }
 
   // --- Reveal on scroll ---
