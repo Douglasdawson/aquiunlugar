@@ -3,6 +3,7 @@ node_modules/
 *.log
 public/css/styles.min.css
 public/js/main.min.js
+public/js/cookies.min.js
 public/images/hero-optimized.jpg
 public/images/hero-local.webp
 public/favicon-32x32.png

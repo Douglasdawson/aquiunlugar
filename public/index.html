@@ -56,6 +56,13 @@
       "opens": "10:00",
       "closes": "20:00"
     },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rambla Romà Barnes",
+      "addressLocality": "Premià de Mar",
+      "addressRegion": "Barcelona",
+      "addressCountry": "ES"
+    },
     "sameAs": [
       "https://www.instagram.com/aquiunlugar.creativo"
     ]
@@ -71,6 +78,7 @@
       <ul class="nav-links">
         <li><a href="#filosofia">Filosofía</a></li>
         <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#experiencias">Experiencias</a></li>
         <li><a href="#tienda">Tienda</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -87,6 +95,7 @@
     <button class="mobile-nav-close" aria-label="Cerrar menú">✕</button>
     <a href="#filosofia">Filosofía</a>
     <a href="#talleres">Talleres</a>
+    <a href="#galeria">Galería</a>
     <a href="#experiencias">Experiencias</a>
     <a href="#tienda">Tienda</a>
     <a href="#contacto">Contacto</a>
@@ -263,6 +272,35 @@
     </div>
   </section>
 
+  <!-- ========== GALERÍA ========== -->
+  <section id="galeria" class="galeria section-padding">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Galería</span>
+        <h2 class="section-title">Momentos que inspiran</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="galeria-grid stagger-children">
+        <div class="galeria-item reveal" data-index="0"><span role="img" aria-label="Cámara">📷</span></div>
+        <div class="galeria-item reveal" data-index="1"><span role="img" aria-label="Cámara">📷</span></div>
+        <div class="galeria-item reveal" data-index="2"><span role="img" aria-label="Cámara">📷</span></div>
+        <div class="galeria-item reveal" data-index="3"><span role="img" aria-label="Cámara">📷</span></div>
+        <div class="galeria-item reveal" data-index="4"><span role="img" aria-label="Cámara">📷</span></div>
+        <div class="galeria-item reveal" data-index="5"><span role="img" aria-label="Cámara">📷</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Visor de imágenes">
+    <div class="lightbox-content">
+      <div class="lightbox-placeholder"><span>📷</span></div>
+      <button class="lightbox-close" aria-label="Cerrar visor">✕</button>
+      <button class="lightbox-prev" aria-label="Imagen anterior">&#8592;</button>
+      <button class="lightbox-next" aria-label="Imagen siguiente">&#8594;</button>
+    </div>
+  </div>
+
   <!-- ========== EXPERIENCIAS ========== -->
   <section id="experiencias" class="experiencias section-padding">
     <div class="container">
@@ -348,12 +386,110 @@
     </div>
   </section>
 
+  <!-- ========== TESTIMONIOS ========== -->
+  <section class="testimonios section-padding">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Testimonios</span>
+        <h2 class="section-title">Lo que dicen quienes han venido</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="testimonios-grid stagger-children">
+        <div class="testimonio-card reveal">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-quote">"Fue una experiencia maravillosa. Llegué sin saber nada de macramé y salí con un tapiz que ahora decora mi salón. El ambiente es increíble."</p>
+          <p class="testimonio-name">Laura M.</p>
+          <p class="testimonio-detail">Taller de Macramé</p>
+        </div>
+        <div class="testimonio-card reveal">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-quote">"Vine con mis amigas para celebrar un cumpleaños y fue el mejor plan que hemos hecho nunca. Nos reímos, creamos y desconectamos de todo."</p>
+          <p class="testimonio-name">Marta R.</p>
+          <p class="testimonio-detail">Experiencia Cumpleaños</p>
+        </div>
+        <div class="testimonio-card reveal">
+          <div class="testimonio-stars">★★★★★</div>
+          <p class="testimonio-quote">"Un espacio con una energía especial. Me encanta ir los sábados a pintar. Es mi momento de desconexión semanal. Totalmente recomendable."</p>
+          <p class="testimonio-name">Carlos P.</p>
+          <p class="testimonio-detail">Taller de Pintura</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== BANNER CTA ========== -->
   <section class="banner-cta">
     <div class="container reveal">
       <h2>¿Tienes ganas de crear?</h2>
       <p>Escríbenos y te ayudamos a encontrar tu taller perfecto. Sin presión, con cariño.</p>
       <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20saber%20más%20sobre%20Aquí%20un%20lugar%20🌿" class="btn btn-whatsapp btn-cta-large"><span role="img" aria-label="Mensaje">💬</span> Hablemos por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq section-padding">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Preguntas frecuentes</span>
+        <h2 class="section-title">Todo lo que necesitas saber</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Necesito experiencia previa para apuntarme?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>No, en absoluto. Nuestros talleres están diseñados para todos los niveles. Te guiamos paso a paso para que disfrutes del proceso sin presión. Lo único que necesitas son ganas de crear.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Qué incluye el precio del taller?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Todos los materiales, herramientas y la guía de nuestros monitores. Solo tienes que venir con ganas. Te llevas tu creación a casa al terminar.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Cómo reservo mi plaza?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Muy fácil: escríbenos por WhatsApp al +34 676 807 577 y te confirmamos disponibilidad. Sin formularios, sin complicaciones.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Puedo venir con niños?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>¡Claro que sí! Tenemos talleres adaptados para familias. Es un plan genial para disfrutar juntos creando algo con las manos. Consulta las edades recomendadas para cada taller.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Hacéis talleres para grupos privados?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Sí, organizamos experiencias para grupos de amigas, team building, cumpleaños, despedidas y cualquier celebración. Escríbenos y lo diseñamos a medida.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            ¿Dónde estáis ubicados?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" hidden>
+            <p>Estamos en la Rambla Romà Barnes, en Premià de Mar (Barcelona). Puedes ver nuestra ubicación en el mapa de la sección de contacto o escribirnos por WhatsApp para más indicaciones.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -378,7 +514,7 @@
               <div class="contacto-icon"><span role="img" aria-label="Ubicación">📍</span></div>
               <div class="contacto-item-text">
                 <h4>Dirección</h4>
-                <p>Consulta nuestra ubicación por WhatsApp</p>
+                <p>Rambla Romà Barnes, Premià de Mar</p>
               </div>
             </div>
             <div class="contacto-item">
@@ -397,11 +533,36 @@
         </div>
 
         <div class="contacto-map reveal">
-          <div class="map-placeholder">
-            <span role="img" aria-label="Mapa" class="map-emoji">🗺️</span>
-            <p class="map-placeholder-text">Aquí irá el mapa de Google Maps con tu ubicación.<br>Compárteme la dirección y lo integro.</p>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.5!2d2.3568!3d41.4925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4b7c0c0c0c0c0%3A0x0!2sRambla+Rom%C3%A0+Barnes%2C+Premi%C3%A0+de+Mar!5e0!3m2!1ses!2ses!4v1710000000000"
+            width="100%" height="100%" style="border:0"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Aquí un lugar">
+          </iframe>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INSTAGRAM ========== -->
+  <section class="instagram section-padding">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Síguenos</span>
+        <h2 class="section-title">Encuéntranos en Instagram</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="instagram-grid stagger-children">
+        <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="instagram-item reveal"><span role="img" aria-label="Foto">📸</span></a>
+        <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="instagram-item reveal"><span role="img" aria-label="Foto">📸</span></a>
+        <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="instagram-item reveal"><span role="img" aria-label="Foto">📸</span></a>
+        <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="instagram-item reveal"><span role="img" aria-label="Foto">📸</span></a>
+        <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="instagram-item reveal"><span role="img" aria-label="Foto">📸</span></a>
+        <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="instagram-item reveal"><span role="img" aria-label="Foto">📸</span></a>
+      </div>
+      <div class="instagram-cta">
+        <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver más en Instagram</a>
       </div>
     </div>
   </section>
@@ -425,6 +586,11 @@
       <div class="footer-bottom">
         <p>© 2026 Aquí un lugar — Espacio Creativo. Hecho con <span role="img" aria-label="Corazón marrón">🤎</span> y muchas ganas.</p>
       </div>
+      <div class="footer-legal">
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
     </div>
   </footer>
 
@@ -433,6 +599,7 @@
 
   <!-- Scripts -->
   <script src="js/main.min.js"></script>
+  <script src="js/cookies.min.js"></script>
 
 </body>
 </html>

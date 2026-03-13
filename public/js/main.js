@@ -57,6 +57,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Lightbox ---
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    const items = document.querySelectorAll('.galeria-item');
+    let currentIndex = 0;
+
+    const openLightbox = (index) => {
+      currentIndex = index;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      lightbox.querySelector('.lightbox-close').focus();
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    const navigate = (dir) => {
+      currentIndex = (currentIndex + dir + items.length) % items.length;
+    };
+
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        openLightbox(parseInt(item.dataset.index, 10));
+      });
+    });
+
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', () => navigate(-1));
+    lightbox.querySelector('.lightbox-next').addEventListener('click', () => navigate(1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  }
+
+  // --- FAQ Accordion ---
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('active');
+      const answer = item.querySelector('.faq-answer');
+
+      // Close all
+      document.querySelectorAll('.faq-item.active').forEach(openItem => {
+        openItem.classList.remove('active');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        openItem.querySelector('.faq-answer').hidden = true;
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.hidden = false;
+      }
+    });
+  });
+
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {

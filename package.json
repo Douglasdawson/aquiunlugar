@@ -7,8 +7,9 @@
     "start": "npx serve public -l 3000",
     "build:css": "cleancss -o public/css/styles.min.css public/css/styles.css",
     "build:js": "terser public/js/main.js -o public/js/main.min.js -c -m",
+    "build:cookies": "terser public/js/cookies.js -o public/js/cookies.min.js -c -m",
     "build:images": "node scripts/optimize-images.js",
-    "build": "npm run build:css && npm run build:js && npm run build:images"
+    "build": "npm run build:css && npm run build:js && npm run build:cookies && npm run build:images"
   },
   "dependencies": {
     "serve": "^14.2.0"
