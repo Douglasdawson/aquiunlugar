@@ -39,6 +39,30 @@ async function run() {
   } else {
     console.warn('⚠ hero-local.jpg not found, skipping hero optimization');
   }
+
+  // Optimize gallery images
+  for (let i = 1; i <= 6; i++) {
+    const src = path.join(IMAGES, `galeria-${i}.jpg`);
+    if (fs.existsSync(src)) {
+      await sharp(src)
+        .resize(800, 800, { fit: 'cover' })
+        .jpeg({ quality: 80 })
+        .toFile(path.join(IMAGES, `galeria-${i}-opt.jpg`));
+      console.log(`✓ galeria-${i}-opt.jpg`);
+    }
+  }
+
+  // Optimize Instagram images
+  for (let i = 1; i <= 6; i++) {
+    const src = path.join(IMAGES, `insta-${i}.jpg`);
+    if (fs.existsSync(src)) {
+      await sharp(src)
+        .resize(400, 400, { fit: 'cover' })
+        .jpeg({ quality: 80 })
+        .toFile(path.join(IMAGES, `insta-${i}-opt.jpg`));
+      console.log(`✓ insta-${i}-opt.jpg`);
+    }
+  }
 }
 
 run().catch(err => {
