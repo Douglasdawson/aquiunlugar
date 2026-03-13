@@ -2,7 +2,12 @@
    AQUÍ UN LUGAR — WIZARD DE RESERVAS
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+/* #14 — Support lazy-loading: run immediately if DOM already ready */
+(function init() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+    return;
+  }
   const wizard = document.getElementById('wizard');
   if (!wizard) return;
 
@@ -232,4 +237,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-});
+})();

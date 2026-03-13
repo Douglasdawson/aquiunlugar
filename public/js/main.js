@@ -20,21 +20,68 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileClose = document.querySelector('.mobile-nav-close');
 
   if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
+    let savedScrollY = 0;
+
+    const openMobile = () => {
+      // #10 — Toggle hamburger active class for X animation
+      hamburger.classList.add('active');
       mobileNav.classList.add('active');
       hamburger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    });
 
-    const closeMobile = () => {
-      mobileNav.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      // #12 — iOS-safe scroll lock
+      savedScrollY = window.scrollY;
+      document.body.classList.add('nav-open');
+      document.body.style.top = `-${savedScrollY}px`;
+
+      // #6 — Focus trap for mobile nav
+      const firstFocusable = mobileNav.querySelector('button, a');
+      if (firstFocusable) firstFocusable.focus();
     };
 
+    const closeMobile = () => {
+      // #10 — Remove hamburger active class
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+
+      // #12 — Restore scroll position
+      document.body.classList.remove('nav-open');
+      document.body.style.top = '';
+      window.scrollTo(0, savedScrollY);
+
+      // #6 — Return focus to hamburger
+      hamburger.focus();
+    };
+
+    hamburger.addEventListener('click', openMobile);
     mobileClose?.addEventListener('click', closeMobile);
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMobile);
+    });
+
+    // #6 — Focus trap within mobile nav overlay
+    mobileNav.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobile();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const focusable = mobileNav.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])');
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     });
   }
 
@@ -107,19 +154,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Smooth scroll for anchor links ---
+  // #7 — Use scrollIntoView + CSS scroll-margin-top for accurate positioning
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
       if (href === '#') return;
       e.preventDefault();
       const target = document.querySelector(href);
-      if (target && header) {
-        const headerHeight = header.offsetHeight;
-        const targetPosition = target.offsetTop - headerHeight;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
+
+  // --- #15 Back to top button ---
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 2);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // --- Cookie preference reset ---
   const cookiePrefLink = document.querySelector('.cookie-pref-link');

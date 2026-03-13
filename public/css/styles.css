@@ -33,6 +33,21 @@
   box-sizing: border-box;
 }
 
+/* #5 — Prevent 300ms tap delay and double-tap zoom on interactive elements */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* #1 — Prevent iOS zoom on input focus (requires >= 16px) */
+input, select, textarea {
+  font-size: 1rem;
+}
+
+/* #3 — Compensate fixed header on anchor scroll */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -188,7 +203,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.9rem 1.8rem;
+  padding: 0.7rem 0.8rem 0.7rem 1.8rem;
   max-width: none;
   margin: 0;
 }
@@ -992,7 +1007,7 @@ footer p {
   width: 100%;
   padding: var(--space-2xl) var(--space-xl);
   position: relative;
-  max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
   transform: translateY(20px);
   transition: transform 0.3s ease;
@@ -1133,7 +1148,7 @@ footer p {
   border: 1px solid var(--sand);
   border-radius: var(--radius-sm);
   font-family: 'Outfit', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem; /* #1 — 16px prevents iOS zoom */
   color: var(--text-dark);
   background: var(--white-off);
   transition: border-color 0.2s ease;
@@ -1511,7 +1526,7 @@ footer p {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 300px;
+  max-height: 600px; /* #8 — accommodate longer answers on mobile */
 }
 
 /* ---------- CONTACTO MAP IFRAME ---------- */
@@ -1849,7 +1864,7 @@ footer p {
   }
 
   .wizard-modal {
-    max-height: 100vh;
+    max-height: 100dvh;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     margin-top: auto;
     align-self: flex-end;
@@ -1888,18 +1903,22 @@ footer p {
 @media (max-width: 480px) {
   .container { padding: 0 1.2rem; }
 
-  .cookie-banner { padding: 1rem 1.2rem; }
+  /* #4 — Compact cookie banner on small screens */
+  .cookie-banner { padding: 0.75rem 1rem; }
+  .cookie-banner-content { gap: 0.5rem; }
   .cookie-banner-content p { font-size: 0.8rem; }
-  .cookie-banner .btn { padding: 0.5rem 1rem; font-size: 0.75rem; }
+  .cookie-banner-buttons { flex-direction: row; gap: 0.5rem; }
+  .cookie-banner .btn { padding: 0.45rem 0.8rem; font-size: 0.7rem; }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
   }
 
+  /* #11 — Full width hero buttons on small screens */
   .hero-buttons .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -1907,6 +1926,50 @@ footer p {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+/* ---------- iOS SCROLL LOCK ---------- */
+/* #12 — Prevent rubber-banding on iOS when nav is open */
+body.nav-open {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ---------- BACK TO TOP ---------- */
+/* #15 — Floating back-to-top button */
+.back-to-top {
+  position: fixed;
+  bottom: 6.5rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--terra);
+  color: var(--white-off);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1049;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(166, 123, 91, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--terra-hover);
+  transform: translateY(-2px);
 }
 
 /* ---------- REDUCED MOTION ---------- */
