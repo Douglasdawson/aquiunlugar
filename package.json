@@ -1,0 +1,11 @@
+{
+  "name": "aqui-un-lugar",
+  "version": "1.0.0",
+  "description": "Aquí un lugar — Espacio Creativo",
+  "scripts": {
+    "start": "npx serve public -l 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

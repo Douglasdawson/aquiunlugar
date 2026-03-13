@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquí un lugar — Espacio Creativo</title>
+  <meta name="description" content="Un espacio donde crear con tus manos, desconectar del ruido y conectar contigo. Talleres de macramé, pintura, bordado, mosaiquismo y mucho más.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav class="container">
+      <a href="#" class="nav-logo">Aquí un lugar</a>
+      <ul class="nav-links">
+        <li><a href="#filosofia">Filosofía</a></li>
+        <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#experiencias">Experiencias</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://wa.me/34676807577?text=Hola!%20Me%20gustar%C3%ADa%20saber%20más%20sobre%20Aquí%20un%20lugar" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">Reservar</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay">
+    <button class="mobile-nav-close" aria-label="Cerrar menú">✕</button>
+    <a href="#filosofia">Filosofía</a>
+    <a href="#talleres">Talleres</a>
+    <a href="#experiencias">Experiencias</a>
+    <a href="#tienda">Tienda</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/34676807577?text=Hola!%20Me%20gustar%C3%ADa%20saber%20más%20sobre%20Aquí%20un%20lugar" class="btn btn-whatsapp" style="margin-top: 1rem;">💬 Reservar por WhatsApp</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="section-label">Espacio creativo</span>
+      <h1>Aquí un lugar</h1>
+      <p class="hero-subtitle">Donde tus manos crean y tu mente descansa</p>
+      <div class="hero-buttons">
+        <a href="#talleres" class="btn btn-primary">Descubre los talleres</a>
+        <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20reservar%20un%20taller%20en%20Aquí%20un%20lugar" class="btn btn-secondary" style="color: var(--white-off); border-color: rgba(250,248,245,0.3);">💬 Reservar ahora</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <a href="#filosofia">
+        <span>Descubre</span>
+        <div class="scroll-arrow"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FILOSOFÍA ========== -->
+  <section id="filosofia" class="about section-padding">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <img src="images/hero-local.jpg" alt="Interior de Aquí un lugar" class="about-image-main">
+          <div class="about-accent"></div>
+        </div>
+        <div class="about-text reveal">
+          <span class="section-label">Nuestra filosofía</span>
+          <h2 class="section-title">Más que un taller,<br>un refugio creativo</h2>
+          <p>Aquí un lugar nació de una certeza: todos necesitamos un espacio donde parar, respirar y crear con las manos. Un lugar donde el tiempo se mide en puntadas, en pinceladas, en nudos que van tomando forma.</p>
+          <p>No importa si nunca has cogido un pincel o una aguja. Aquí no hay errores, hay descubrimientos. Cada pieza que creas lleva algo tuyo que no sabías que estaba ahí.</p>
+          <p>Ven a desconectar del ruido. Ven a conectar contigo.</p>
+          <div class="about-values">
+            <div class="value-item">
+              <div class="value-icon">🌿</div>
+              <span>Calma</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">✋</div>
+              <span>Crear</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">💛</div>
+              <span>Conectar</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">✨</div>
+              <span>Descubrir</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TALLERES ========== -->
+  <section id="talleres" class="talleres section-padding">
+    <div class="container">
+      <div class="talleres-intro text-center reveal">
+        <span class="section-label">Nuestros talleres</span>
+        <h2 class="section-title">Elige tu forma de crear</h2>
+        <div class="divider"></div>
+        <p>Talleres programados con horario o espacio libre para que vengas cuando quieras. Tú decides el ritmo, nosotros ponemos todo lo que necesitas.</p>
+      </div>
+      <div class="talleres-grid stagger-children">
+
+        <div class="taller-card reveal">
+          <div class="taller-icon-wrapper">
+            <span class="taller-emoji">🪢</span>
+          </div>
+          <div class="taller-card-body">
+            <h3>Macramé</h3>
+            <p>Nudos que se convierten en arte. Crea tapices, colgantes y piezas decorativas con tus propias manos.</p>
+            <span class="taller-tag">Todos los niveles</span>
+          </div>
+        </div>
+
+        <div class="taller-card reveal">
+          <div class="taller-icon-wrapper">
+            <span class="taller-emoji">🎨</span>
+          </div>
+          <div class="taller-card-body">
+            <h3>Pintura</h3>
+            <p>Deja que los colores hablen por ti. Acrílico, acuarela, técnicas mixtas… tu lienzo, tus reglas.</p>
+            <span class="taller-tag">Sin experiencia previa</span>
+          </div>
+        </div>
+
+        <div class="taller-card reveal">
+          <div class="taller-icon-wrapper">
+            <span class="taller-emoji">🧵</span>
+          </div>
+          <div class="taller-card-body">
+            <h3>Bordado</h3>
+            <p>Puntada a puntada, crea piezas únicas. Bordado libre, punch needle y más técnicas por descubrir.</p>
+            <span class="taller-tag">Relajante</span>
+          </div>
+        </div>
+
+        <div class="taller-card reveal">
+          <div class="taller-icon-wrapper">
+            <span class="taller-emoji">🪩</span>
+          </div>
+          <div class="taller-card-body">
+            <h3>Mosaiquismo</h3>
+            <p>Pieza a pieza, construye algo hermoso. Espejos, bandejas, cuadros… todo se transforma con mosaico.</p>
+            <span class="taller-tag">Creativo</span>
+          </div>
+        </div>
+
+        <div class="taller-card reveal">
+          <div class="taller-icon-wrapper">
+            <span class="taller-emoji">👗</span>
+          </div>
+          <div class="taller-card-body">
+            <h3>Customizar ropa</h3>
+            <p>Dale nueva vida a tus prendas. Sublimación, estampado, parches, pintura textil… moda única y personal.</p>
+            <span class="taller-tag">Sostenible</span>
+          </div>
+        </div>
+
+        <div class="taller-card reveal">
+          <div class="taller-icon-wrapper">
+            <span class="taller-emoji">🫙</span>
+          </div>
+          <div class="taller-card-body">
+            <h3>Decoupage</h3>
+            <p>Transforma cristal, madera y objetos cotidianos en piezas de autor con la técnica del decoupage.</p>
+            <span class="taller-tag">Decoración</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CÓMO FUNCIONA ========== -->
+  <section class="como-funciona section-padding">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Cómo funciona</span>
+        <h2 class="section-title">Tan fácil como respirar</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps-grid">
+        <div class="step-item reveal">
+          <div class="step-number">01</div>
+          <h3>Elige tu taller</h3>
+          <p>Explora nuestras opciones y elige lo que más te llame. También puedes venir sin plan y dejarte llevar.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-number">02</div>
+          <h3>Reserva tu plaza</h3>
+          <p>Escríbenos por WhatsApp y te guardamos tu sitio. Sin complicaciones, sin formularios eternos.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-number">03</div>
+          <h3>Ven y crea</h3>
+          <p>Nosotros ponemos todo: materiales, herramientas, guía y la mejor energía. Tú solo ven con ganas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCIAS ========== -->
+  <section id="experiencias" class="experiencias section-padding">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Experiencias</span>
+        <h2 class="section-title">Crea momentos que importan</h2>
+        <div class="divider" style="background: rgba(212,184,150,0.3);"></div>
+        <p>¿Buscas un plan diferente? Organizamos experiencias creativas para todo tipo de grupos y ocasiones.</p>
+      </div>
+      <div class="exp-grid stagger-children">
+        <div class="exp-card reveal">
+          <div class="exp-icon">👯‍♀️</div>
+          <h3>Amigas</h3>
+          <p>Un plan diferente donde reíros, crear y llevaros algo hecho por vosotras. Mucho mejor que un brunch.</p>
+        </div>
+        <div class="exp-card reveal">
+          <div class="exp-icon">🏢</div>
+          <h3>Team building</h3>
+          <p>Fortalece tu equipo de una forma nueva. Crear juntos conecta de una manera que las dinámicas de siempre no consiguen.</p>
+        </div>
+        <div class="exp-card reveal">
+          <div class="exp-icon">🎂</div>
+          <h3>Cumpleaños y eventos</h3>
+          <p>Despedidas, cumples, celebraciones… regala una experiencia creativa en lugar de algo que acabará en un cajón.</p>
+        </div>
+        <div class="exp-card reveal">
+          <div class="exp-icon">👨‍👩‍👧‍👦</div>
+          <h3>Familias</h3>
+          <p>Crear juntos en familia es una forma preciosa de pasar tiempo de calidad. Para todas las edades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TIENDA / KITS ========== -->
+  <section id="tienda" class="tienda section-padding">
+    <div class="container">
+      <div class="tienda-intro text-center reveal">
+        <span class="section-label">Tienda</span>
+        <h2 class="section-title">Llévate la creatividad a casa</h2>
+        <div class="divider"></div>
+        <p>Kits con todo lo que necesitas para crear desde donde quieras. Materiales de calidad, instrucciones paso a paso y toda nuestra esencia.</p>
+      </div>
+      <div class="tienda-grid stagger-children">
+
+        <div class="producto-card reveal">
+          <div class="producto-img">
+            <span class="producto-emoji">🪢</span>
+          </div>
+          <div class="producto-body">
+            <h3>Kit Macramé Básico</h3>
+            <div class="producto-price">Consultar precio</div>
+            <p>Todo lo necesario para crear tu primer tapiz: cuerdas, soporte, guía ilustrada y acceso a tutorial.</p>
+            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Macramé%20Básico" class="btn btn-whatsapp">💬 Pedir por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="producto-card reveal">
+          <div class="producto-img">
+            <span class="producto-emoji">🧵</span>
+          </div>
+          <div class="producto-body">
+            <h3>Kit Bordado Creativo</h3>
+            <div class="producto-price">Consultar precio</div>
+            <p>Bastidor, hilos, tela, aguja y diseño para bordar. Incluye instrucciones para que te salga perfecto.</p>
+            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Bordado%20Creativo" class="btn btn-whatsapp">💬 Pedir por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="producto-card reveal">
+          <div class="producto-img">
+            <span class="producto-emoji">🎨</span>
+          </div>
+          <div class="producto-body">
+            <h3>Kit Pintura Express</h3>
+            <div class="producto-price">Consultar precio</div>
+            <p>Lienzo, pinturas acrílicas, pinceles y una guía creativa para que pintes tu primera obra sin miedo.</p>
+            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Pintura%20Express" class="btn btn-whatsapp">💬 Pedir por WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BANNER CTA ========== -->
+  <section class="banner-cta">
+    <div class="container reveal">
+      <h2>¿Tienes ganas de crear?</h2>
+      <p>Escríbenos y te ayudamos a encontrar tu taller perfecto. Sin presión, con cariño.</p>
+      <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20saber%20más%20sobre%20Aquí%20un%20lugar%20🌿" class="btn btn-whatsapp" style="font-size: 1rem; padding: 1rem 2.5rem;">💬 Hablemos por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTO ========== -->
+  <section id="contacto" class="contacto section-padding">
+    <div class="container">
+      <div class="contacto-grid">
+        <div class="contacto-info reveal">
+          <span class="section-label">Contacto</span>
+          <h2 class="section-title">Ven a conocernos</h2>
+          <p>Estamos deseando recibirte. Escríbenos, llámanos o simplemente pasa por el local. Las puertas siempre están abiertas.</p>
+
+          <div class="contacto-details">
+            <div class="contacto-item">
+              <div class="contacto-icon">💬</div>
+              <div class="contacto-item-text">
+                <h4>WhatsApp</h4>
+                <p><a href="https://wa.me/34676807577">+34 676 807 577</a></p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <div class="contacto-icon">📍</div>
+              <div class="contacto-item-text">
+                <h4>Dirección</h4>
+                <p>Consulta nuestra ubicación por WhatsApp</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <div class="contacto-icon">🕐</div>
+              <div class="contacto-item-text">
+                <h4>Horario</h4>
+                <p>Consulta nuestro horario actualizado en Instagram</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contacto-social">
+            <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">📸</a>
+            <a href="https://wa.me/34676807577" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <div class="contacto-map reveal">
+          <div class="map-placeholder">
+            <span style="font-size: 3rem;">🗺️</span>
+            <p style="margin-top: 1rem; color: var(--text-light);">Aquí irá el mapa de Google Maps con tu ubicación.<br>Compárteme la dirección y lo integro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">Aquí un lugar</div>
+          <span class="footer-tagline">espacio creativo</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#filosofia">Filosofía</a></li>
+          <li><a href="#talleres">Talleres</a></li>
+          <li><a href="#experiencias">Experiencias</a></li>
+          <li><a href="#tienda">Tienda</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(250,248,245,0.08);">
+        <p>© 2026 Aquí un lugar — Espacio Creativo. Hecho con 🤎 y muchas ganas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== WHATSAPP FLOTANTE ========== -->
+  <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20info%20sobre%20Aquí%20un%20lugar%20🌿" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
