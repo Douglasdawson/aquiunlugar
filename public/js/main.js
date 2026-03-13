@@ -20,11 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hamburger && mobileNav) {
     hamburger.addEventListener('click', () => {
       mobileNav.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     });
 
     const closeMobile = () => {
       mobileNav.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     };
 

@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aquí un lugar — Espacio Creativo</title>
   <meta name="description" content="Un espacio donde crear con tus manos, desconectar del ruido y conectar contigo. Talleres de macramé, pintura, bordado, mosaiquismo y mucho más.">
+  <link rel="canonical" href="https://aquiunlugar.com/">
+  <meta name="theme-color" content="#3D2B1F">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aquí un lugar — Espacio Creativo">
+  <meta property="og:description" content="Un espacio donde crear con tus manos, desconectar del ruido y conectar contigo. Talleres de macramé, pintura, bordado, mosaiquismo y mucho más.">
+  <meta property="og:url" content="https://aquiunlugar.com/">
+  <meta property="og:image" content="https://aquiunlugar.com/images/hero-optimized.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Aquí un lugar">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aquí un lugar — Espacio Creativo">
+  <meta name="twitter:description" content="Un espacio donde crear con tus manos, desconectar del ruido y conectar contigo. Talleres de macramé, pintura, bordado, mosaiquismo y mucho más.">
+  <meta name="twitter:image" content="https://aquiunlugar.com/images/hero-optimized.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +37,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.min.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Aquí un lugar",
+    "description": "Espacio creativo con talleres de macramé, pintura, bordado, mosaiquismo y más.",
+    "url": "https://aquiunlugar.com",
+    "telephone": "+34676807577",
+    "image": "https://aquiunlugar.com/images/hero-optimized.jpg",
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/aquiunlugar.creativo"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -26,23 +74,23 @@
         <li><a href="#experiencias">Experiencias</a></li>
         <li><a href="#tienda">Tienda</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="https://wa.me/34676807577?text=Hola!%20Me%20gustar%C3%ADa%20saber%20más%20sobre%20Aquí%20un%20lugar" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">Reservar</a></li>
+        <li><a href="https://wa.me/34676807577?text=Hola!%20Me%20gustar%C3%ADa%20saber%20más%20sobre%20Aquí%20un%20lugar" class="btn btn-primary btn-nav">Reservar</a></li>
       </ul>
-      <button class="hamburger" aria-label="Abrir menú">
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </nav>
   </header>
 
   <!-- Mobile Nav -->
-  <div class="mobile-nav-overlay">
+  <div class="mobile-nav-overlay" id="mobile-nav" role="dialog" aria-label="Menú de navegación">
     <button class="mobile-nav-close" aria-label="Cerrar menú">✕</button>
     <a href="#filosofia">Filosofía</a>
     <a href="#talleres">Talleres</a>
     <a href="#experiencias">Experiencias</a>
     <a href="#tienda">Tienda</a>
     <a href="#contacto">Contacto</a>
-    <a href="https://wa.me/34676807577?text=Hola!%20Me%20gustar%C3%ADa%20saber%20más%20sobre%20Aquí%20un%20lugar" class="btn btn-whatsapp" style="margin-top: 1rem;">💬 Reservar por WhatsApp</a>
+    <a href="https://wa.me/34676807577?text=Hola!%20Me%20gustar%C3%ADa%20saber%20más%20sobre%20Aquí%20un%20lugar" class="btn btn-whatsapp btn-mobile-reserve"><span role="img" aria-label="Mensaje">💬</span> Reservar por WhatsApp</a>
   </div>
 
   <!-- ========== HERO ========== -->
@@ -55,7 +103,7 @@
       <p class="hero-subtitle">Donde tus manos crean y tu mente descansa</p>
       <div class="hero-buttons">
         <a href="#talleres" class="btn btn-primary">Descubre los talleres</a>
-        <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20reservar%20un%20taller%20en%20Aquí%20un%20lugar" class="btn btn-secondary" style="color: var(--white-off); border-color: rgba(250,248,245,0.3);">💬 Reservar ahora</a>
+        <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20reservar%20un%20taller%20en%20Aquí%20un%20lugar" class="btn btn-hero-secondary"><span role="img" aria-label="Mensaje">💬</span> Reservar ahora</a>
       </div>
     </div>
     <div class="scroll-indicator">
@@ -71,7 +119,10 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-visual reveal">
-          <img src="images/hero-local.jpg" alt="Interior de Aquí un lugar" class="about-image-main">
+          <picture>
+            <source srcset="images/hero-local.webp" type="image/webp">
+            <img src="images/hero-optimized.jpg" alt="Interior de Aquí un lugar" class="about-image-main" loading="lazy">
+          </picture>
           <div class="about-accent"></div>
         </div>
         <div class="about-text reveal">
@@ -82,19 +133,19 @@
           <p>Ven a desconectar del ruido. Ven a conectar contigo.</p>
           <div class="about-values">
             <div class="value-item">
-              <div class="value-icon">🌿</div>
+              <div class="value-icon"><span role="img" aria-label="Planta">🌿</span></div>
               <span>Calma</span>
             </div>
             <div class="value-item">
-              <div class="value-icon">✋</div>
+              <div class="value-icon"><span role="img" aria-label="Mano">✋</span></div>
               <span>Crear</span>
             </div>
             <div class="value-item">
-              <div class="value-icon">💛</div>
+              <div class="value-icon"><span role="img" aria-label="Corazón amarillo">💛</span></div>
               <span>Conectar</span>
             </div>
             <div class="value-item">
-              <div class="value-icon">✨</div>
+              <div class="value-icon"><span role="img" aria-label="Destellos">✨</span></div>
               <span>Descubrir</span>
             </div>
           </div>
@@ -116,7 +167,7 @@
 
         <div class="taller-card reveal">
           <div class="taller-icon-wrapper">
-            <span class="taller-emoji">🪢</span>
+            <span class="taller-emoji" role="img" aria-label="Nudo">🪢</span>
           </div>
           <div class="taller-card-body">
             <h3>Macramé</h3>
@@ -127,7 +178,7 @@
 
         <div class="taller-card reveal">
           <div class="taller-icon-wrapper">
-            <span class="taller-emoji">🎨</span>
+            <span class="taller-emoji" role="img" aria-label="Paleta de pintura">🎨</span>
           </div>
           <div class="taller-card-body">
             <h3>Pintura</h3>
@@ -138,7 +189,7 @@
 
         <div class="taller-card reveal">
           <div class="taller-icon-wrapper">
-            <span class="taller-emoji">🧵</span>
+            <span class="taller-emoji" role="img" aria-label="Hilo y aguja">🧵</span>
           </div>
           <div class="taller-card-body">
             <h3>Bordado</h3>
@@ -149,7 +200,7 @@
 
         <div class="taller-card reveal">
           <div class="taller-icon-wrapper">
-            <span class="taller-emoji">🪩</span>
+            <span class="taller-emoji" role="img" aria-label="Bola de espejo">🪩</span>
           </div>
           <div class="taller-card-body">
             <h3>Mosaiquismo</h3>
@@ -160,7 +211,7 @@
 
         <div class="taller-card reveal">
           <div class="taller-icon-wrapper">
-            <span class="taller-emoji">👗</span>
+            <span class="taller-emoji" role="img" aria-label="Vestido">👗</span>
           </div>
           <div class="taller-card-body">
             <h3>Customizar ropa</h3>
@@ -171,7 +222,7 @@
 
         <div class="taller-card reveal">
           <div class="taller-icon-wrapper">
-            <span class="taller-emoji">🫙</span>
+            <span class="taller-emoji" role="img" aria-label="Tarro">🫙</span>
           </div>
           <div class="taller-card-body">
             <h3>Decoupage</h3>
@@ -218,27 +269,27 @@
       <div class="text-center reveal">
         <span class="section-label">Experiencias</span>
         <h2 class="section-title">Crea momentos que importan</h2>
-        <div class="divider" style="background: rgba(212,184,150,0.3);"></div>
+        <div class="divider divider--light"></div>
         <p>¿Buscas un plan diferente? Organizamos experiencias creativas para todo tipo de grupos y ocasiones.</p>
       </div>
       <div class="exp-grid stagger-children">
         <div class="exp-card reveal">
-          <div class="exp-icon">👯‍♀️</div>
+          <div class="exp-icon"><span role="img" aria-label="Amigas bailando">👯‍♀️</span></div>
           <h3>Amigas</h3>
           <p>Un plan diferente donde reíros, crear y llevaros algo hecho por vosotras. Mucho mejor que un brunch.</p>
         </div>
         <div class="exp-card reveal">
-          <div class="exp-icon">🏢</div>
+          <div class="exp-icon"><span role="img" aria-label="Edificio de oficinas">🏢</span></div>
           <h3>Team building</h3>
           <p>Fortalece tu equipo de una forma nueva. Crear juntos conecta de una manera que las dinámicas de siempre no consiguen.</p>
         </div>
         <div class="exp-card reveal">
-          <div class="exp-icon">🎂</div>
+          <div class="exp-icon"><span role="img" aria-label="Tarta de cumpleaños">🎂</span></div>
           <h3>Cumpleaños y eventos</h3>
           <p>Despedidas, cumples, celebraciones… regala una experiencia creativa en lugar de algo que acabará en un cajón.</p>
         </div>
         <div class="exp-card reveal">
-          <div class="exp-icon">👨‍👩‍👧‍👦</div>
+          <div class="exp-icon"><span role="img" aria-label="Familia">👨‍👩‍👧‍👦</span></div>
           <h3>Familias</h3>
           <p>Crear juntos en familia es una forma preciosa de pasar tiempo de calidad. Para todas las edades.</p>
         </div>
@@ -259,37 +310,37 @@
 
         <div class="producto-card reveal">
           <div class="producto-img">
-            <span class="producto-emoji">🪢</span>
+            <span class="producto-emoji" role="img" aria-label="Nudo">🪢</span>
           </div>
           <div class="producto-body">
             <h3>Kit Macramé Básico</h3>
             <div class="producto-price">Consultar precio</div>
             <p>Todo lo necesario para crear tu primer tapiz: cuerdas, soporte, guía ilustrada y acceso a tutorial.</p>
-            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Macramé%20Básico" class="btn btn-whatsapp">💬 Pedir por WhatsApp</a>
+            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Macramé%20Básico" class="btn btn-whatsapp"><span role="img" aria-label="Mensaje">💬</span> Pedir por WhatsApp</a>
           </div>
         </div>
 
         <div class="producto-card reveal">
           <div class="producto-img">
-            <span class="producto-emoji">🧵</span>
+            <span class="producto-emoji" role="img" aria-label="Hilo y aguja">🧵</span>
           </div>
           <div class="producto-body">
             <h3>Kit Bordado Creativo</h3>
             <div class="producto-price">Consultar precio</div>
             <p>Bastidor, hilos, tela, aguja y diseño para bordar. Incluye instrucciones para que te salga perfecto.</p>
-            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Bordado%20Creativo" class="btn btn-whatsapp">💬 Pedir por WhatsApp</a>
+            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Bordado%20Creativo" class="btn btn-whatsapp"><span role="img" aria-label="Mensaje">💬</span> Pedir por WhatsApp</a>
           </div>
         </div>
 
         <div class="producto-card reveal">
           <div class="producto-img">
-            <span class="producto-emoji">🎨</span>
+            <span class="producto-emoji" role="img" aria-label="Paleta de pintura">🎨</span>
           </div>
           <div class="producto-body">
             <h3>Kit Pintura Express</h3>
             <div class="producto-price">Consultar precio</div>
             <p>Lienzo, pinturas acrílicas, pinceles y una guía creativa para que pintes tu primera obra sin miedo.</p>
-            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Pintura%20Express" class="btn btn-whatsapp">💬 Pedir por WhatsApp</a>
+            <a href="https://wa.me/34676807577?text=Hola!%20Me%20interesa%20el%20Kit%20Pintura%20Express" class="btn btn-whatsapp"><span role="img" aria-label="Mensaje">💬</span> Pedir por WhatsApp</a>
           </div>
         </div>
 
@@ -302,7 +353,7 @@
     <div class="container reveal">
       <h2>¿Tienes ganas de crear?</h2>
       <p>Escríbenos y te ayudamos a encontrar tu taller perfecto. Sin presión, con cariño.</p>
-      <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20saber%20más%20sobre%20Aquí%20un%20lugar%20🌿" class="btn btn-whatsapp" style="font-size: 1rem; padding: 1rem 2.5rem;">💬 Hablemos por WhatsApp</a>
+      <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20saber%20más%20sobre%20Aquí%20un%20lugar%20🌿" class="btn btn-whatsapp btn-cta-large"><span role="img" aria-label="Mensaje">💬</span> Hablemos por WhatsApp</a>
     </div>
   </section>
 
@@ -317,21 +368,21 @@
 
           <div class="contacto-details">
             <div class="contacto-item">
-              <div class="contacto-icon">💬</div>
+              <div class="contacto-icon"><span role="img" aria-label="Mensaje">💬</span></div>
               <div class="contacto-item-text">
                 <h4>WhatsApp</h4>
                 <p><a href="https://wa.me/34676807577">+34 676 807 577</a></p>
               </div>
             </div>
             <div class="contacto-item">
-              <div class="contacto-icon">📍</div>
+              <div class="contacto-icon"><span role="img" aria-label="Ubicación">📍</span></div>
               <div class="contacto-item-text">
                 <h4>Dirección</h4>
                 <p>Consulta nuestra ubicación por WhatsApp</p>
               </div>
             </div>
             <div class="contacto-item">
-              <div class="contacto-icon">🕐</div>
+              <div class="contacto-icon"><span role="img" aria-label="Reloj">🕐</span></div>
               <div class="contacto-item-text">
                 <h4>Horario</h4>
                 <p>Consulta nuestro horario actualizado en Instagram</p>
@@ -340,15 +391,15 @@
           </div>
 
           <div class="contacto-social">
-            <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">📸</a>
-            <a href="https://wa.me/34676807577" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">💬</a>
+            <a href="https://www.instagram.com/aquiunlugar.creativo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><span role="img" aria-label="Cámara">📸</span></a>
+            <a href="https://wa.me/34676807577" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><span role="img" aria-label="Mensaje">💬</span></a>
           </div>
         </div>
 
         <div class="contacto-map reveal">
           <div class="map-placeholder">
-            <span style="font-size: 3rem;">🗺️</span>
-            <p style="margin-top: 1rem; color: var(--text-light);">Aquí irá el mapa de Google Maps con tu ubicación.<br>Compárteme la dirección y lo integro.</p>
+            <span role="img" aria-label="Mapa" class="map-emoji">🗺️</span>
+            <p class="map-placeholder-text">Aquí irá el mapa de Google Maps con tu ubicación.<br>Compárteme la dirección y lo integro.</p>
           </div>
         </div>
       </div>
@@ -371,17 +422,17 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
-      <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(250,248,245,0.08);">
-        <p>© 2026 Aquí un lugar — Espacio Creativo. Hecho con 🤎 y muchas ganas.</p>
+      <div class="footer-bottom">
+        <p>© 2026 Aquí un lugar — Espacio Creativo. Hecho con <span role="img" aria-label="Corazón marrón">🤎</span> y muchas ganas.</p>
       </div>
     </div>
   </footer>
 
   <!-- ========== WHATSAPP FLOTANTE ========== -->
-  <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20info%20sobre%20Aquí%20un%20lugar%20🌿" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+  <a href="https://wa.me/34676807577?text=Hola!%20Quiero%20info%20sobre%20Aquí%20un%20lugar%20🌿" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"><span role="img" aria-label="Mensaje">💬</span></a>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.min.js"></script>
 
 </body>
 </html>

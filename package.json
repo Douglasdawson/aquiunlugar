@@ -1,11 +1,21 @@
 {
   "name": "aqui-un-lugar",
   "version": "1.0.0",
+  "private": true,
   "description": "Aquí un lugar — Espacio Creativo",
   "scripts": {
-    "start": "npx serve public -l 3000"
+    "start": "npx serve public -l 3000",
+    "build:css": "cleancss -o public/css/styles.min.css public/css/styles.css",
+    "build:js": "terser public/js/main.js -o public/js/main.min.js -c -m",
+    "build:images": "node scripts/optimize-images.js",
+    "build": "npm run build:css && npm run build:js && npm run build:images"
   },
   "dependencies": {
     "serve": "^14.2.0"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.31.0",
+    "sharp": "^0.33.4"
   }
 }

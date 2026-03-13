@@ -5,4 +5,5 @@ entrypoint = "public/index.html"
 channel = "stable-24_05"
 
 [deployment]
+build = ["sh", "-c", "npm run build"]
 run = ["npx", "serve", "public", "-l", "3000"]
