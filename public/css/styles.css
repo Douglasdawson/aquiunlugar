@@ -450,7 +450,6 @@ header.scrolled .hamburger span {
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
 }
 
 .taller-card:hover {
@@ -1609,7 +1608,7 @@ footer p {
   margin: 0 auto;
 }
 
-.article-back {
+.article-back-link {
   font-size: 0.85rem;
   color: var(--terra);
   text-decoration: none;
@@ -1617,7 +1616,7 @@ footer p {
   margin-bottom: 1rem;
 }
 
-.article-back:hover {
+.article-back-link:hover {
   text-decoration: underline;
 }
 
