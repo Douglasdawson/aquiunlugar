@@ -5,8 +5,9 @@ entrypoint = "public/index.html"
 channel = "stable-24_05"
 
 [deployment]
+deploymentTarget = "static"
+publicDir = "public"
 build = ["sh", "-c", "npm run build"]
-run = ["npx", "serve", "public", "-l", "3000"]
 
 [agent]
 expertMode = true
