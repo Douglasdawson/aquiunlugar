@@ -6,10 +6,15 @@ modules = ["python-3.11", "nodejs-20"]
 channel = "stable-24_05"
 
 [deployment]
+deploymentTarget = "static"
+publicDir = "public"
 build = ["sh", "-c", "npm run build"]
+<<<<<<< HEAD
 run = ["npx", "serve", "public", "-l", "3000"]
 deploymentTarget = "static"
 publicDir = "public"
+=======
+>>>>>>> a0a621db19435e22f2b208f4167797f18cad7eaf
 
 [agent]
 expertMode = true

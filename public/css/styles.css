@@ -1541,6 +1541,30 @@ footer p {
   margin-bottom: 1.5rem;
 }
 
+/* ---------- SKIP LINK ---------- */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.8rem 1.5rem;
+  background: var(--terra);
+  color: var(--white-off);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--white-off);
+  outline-offset: 2px;
+}
+
 /* ---------- FOCUS STATES ---------- */
 
 :focus-visible {
