@@ -7,24 +7,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aquiunlugar.com/aviso-legal.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://aquiunlugar.com/privacidad.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://aquiunlugar.com/cookies.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
     <loc>https://aquiunlugar.com/blog.html</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>

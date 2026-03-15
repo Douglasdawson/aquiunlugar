@@ -4,6 +4,7 @@
 
 /* #14 — Support lazy-loading: run immediately if DOM already ready */
 (function init() {
+  'use strict';
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
     return;
@@ -16,6 +17,7 @@
   const panels = wizard.querySelectorAll('.wizard-panel');
   const dots = wizard.querySelectorAll('.wizard-step-dot');
   const activityContainer = wizard.querySelector('[data-name="activity"]');
+  const announcer = document.getElementById('wizard-announce');
   const form = document.getElementById('wizard-form');
   const dateInput = document.getElementById('wizard-date');
 
@@ -73,22 +75,39 @@
       d.classList.toggle('active', s === step);
       d.classList.toggle('done', s < step);
     });
+    if (announcer) {
+      var stepLabels = {1: 'Paso 1 de 3: Elige tipo de actividad', 2: 'Paso 2 de 3: Elige tu actividad', 3: 'Paso 3 de 3: Últimos detalles'};
+      announcer.textContent = stepLabels[step] || '';
+    }
   }
 
   function populateActivities(type) {
     if (!activityContainer) return;
     const list = activities[type] || [];
-    activityContainer.innerHTML = list.map(a => `
-      <button type="button" class="wizard-option" data-value="${a.value}">
-        <svg class="icon" aria-hidden="true"><use href="${a.icon}"/></svg>
-        <span>${a.value}</span>
-      </button>
-    `).join('');
+    activityContainer.textContent = '';
 
-    // Bind click events on new buttons
-    activityContainer.querySelectorAll('.wizard-option').forEach(btn => {
-      btn.addEventListener('click', () => {
-        activityContainer.querySelectorAll('.wizard-option').forEach(b => b.classList.remove('selected'));
+    list.forEach(a => {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'wizard-option';
+      btn.dataset.value = a.value;
+
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('class', 'icon');
+      svg.setAttribute('aria-hidden', 'true');
+      var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      use.setAttributeNS('http://www.w3.org/1999/xlink', 'href', a.icon);
+      svg.appendChild(use);
+
+      var span = document.createElement('span');
+      span.textContent = a.value;
+
+      btn.appendChild(svg);
+      btn.appendChild(span);
+      activityContainer.appendChild(btn);
+
+      btn.addEventListener('click', function() {
+        activityContainer.querySelectorAll('.wizard-option').forEach(function(b) { b.classList.remove('selected'); });
         btn.classList.add('selected');
         selectedActivity = btn.dataset.value;
         goToStep(3);
@@ -147,6 +166,8 @@
     }
 
     wizard.classList.add('active');
+    var confirmation = document.getElementById('wizard-confirmation');
+    if (confirmation) confirmation.hidden = true;
     document.body.style.overflow = 'hidden';
     closeBtn.focus();
   }
@@ -200,14 +221,42 @@
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('wizard-name').value.trim();
+      const nameInput = document.getElementById('wizard-name');
+      const nameError = document.getElementById('wizard-name-error');
+      const name = nameInput.value.trim();
       if (!name) {
-        document.getElementById('wizard-name').focus();
+        if (nameError) nameError.classList.add('visible');
+        nameInput.focus();
         return;
       }
-      const message = buildWhatsAppMessage();
+      if (nameError) nameError.classList.remove('visible');
+      var submitBtn = form.querySelector('.wizard-submit');
+      if (submitBtn) {
+        submitBtn.classList.add('loading');
+        submitBtn.textContent = 'Abriendo WhatsApp...';
+      }
+      var message = buildWhatsAppMessage();
       openWhatsApp(message);
-      close();
+      if (submitBtn) {
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = 'Enviar por WhatsApp';
+      }
+      // Show confirmation instead of closing
+      var confirmation = document.getElementById('wizard-confirmation');
+      if (confirmation) {
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        confirmation.hidden = false;
+        var confirmClose = confirmation.querySelector('#wizard-confirmation-close');
+        if (confirmClose) {
+          confirmClose.addEventListener('click', function() {
+            confirmation.hidden = true;
+            close();
+            if (form) form.reset();
+          }, {once: true});
+        }
+      } else {
+        close();
+      }
     });
   }
 

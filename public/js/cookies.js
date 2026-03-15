@@ -3,6 +3,7 @@
    ============================================ */
 
 (function () {
+  'use strict';
   let consent;
   try {
     consent = localStorage.getItem('cookie-consent');
@@ -18,9 +19,10 @@
   banner.setAttribute('aria-label', 'Aviso de cookies');
   banner.innerHTML =
     '<div class="cookie-banner-content">' +
-      '<p>Este sitio web utiliza cookies técnicas necesarias para su funcionamiento. Consulta nuestra <a href="cookies.html">Política de Cookies</a> para más información.</p>' +
+      '<p>Utilizamos cookies técnicas necesarias. Consulta nuestra <a href="cookies.html">Política de Cookies</a>.</p>' +
       '<div class="cookie-banner-buttons">' +
-        '<button class="btn btn-primary cookie-accept">Entendido</button>' +
+        '<button class="btn btn-secondary cookie-reject">Solo necesarias</button>' +
+        '<button class="btn btn-primary cookie-accept">Aceptar todas</button>' +
       '</div>' +
     '</div>';
 
@@ -28,6 +30,11 @@
 
   banner.querySelector('.cookie-accept').addEventListener('click', function () {
     try { localStorage.setItem('cookie-consent', 'accepted'); } catch (e) { /* noop */ }
+    banner.remove();
+  });
+
+  banner.querySelector('.cookie-reject').addEventListener('click', function () {
+    try { localStorage.setItem('cookie-consent', 'necessary'); } catch (e) { /* noop */ }
     banner.remove();
   });
 })();

@@ -3,6 +3,7 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
 
   // --- Header scroll effect ---
   const header = document.querySelector('header');
